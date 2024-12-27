@@ -1,0 +1,15 @@
+{
+    "name": "project-readme-gen",
+    "version": "1.0.0",
+    "main": "src/index.js",
+    "bin": {
+        "project-readme-gen": "./src/cli.js"
+    },
+    "dependencies": {
+        "commander": "^12.1.0",
+        "dotenv": "^16.4.7",
+        "fs-extra": "^11.2.0",
+        "glob": "^11.0.0",
+        "openai": "^4.77.0"
+    }
+}
