@@ -6,6 +6,7 @@
         "project-readme-gen": "./src/cli.js"
     },
     "dependencies": {
+        "@google/generative-ai": "^0.21.0",
         "commander": "^12.1.0",
         "dotenv": "^16.4.7",
         "fs-extra": "^11.2.0",
