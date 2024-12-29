@@ -1,4 +1,3 @@
-```markdown
 ## Project: README Generator (project-readme-gen)
 
 **Generate high-quality README files effortlessly using the power of AI.**  `project-readme-gen` is a command-line tool that leverages Google's Generative AI and OpenAI's API to automatically create informative and well-structured README files for your projects.  Save time and ensure your projects are well-documented with minimal effort.
@@ -30,10 +29,8 @@
 3. **Install dependencies:** `npm install`
 4. **Set up API keys:** Create a `.env` file in the root directory and add your Google Generative AI and OpenAI API keys:
 
-```
 GOOGLE_API_KEY=your_google_api_key
 OPENAI_API_KEY=your_openai_api_key
-```
 
 ## Usage
 
