@@ -11,6 +11,10 @@
         "src": "/api/generate",
         "methods": ["POST"],
         "dest": "/api/generate"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "/api/generate.js"
       }
     ]
   }
