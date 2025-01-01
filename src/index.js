@@ -1,15 +1,31 @@
 const fs = require("fs-extra");
 const path = require("path");
 const glob = require("glob");
-const { GoogleGenerativeAI } = require("@google/generative-ai");
 require("dotenv").config();
+const fetch = require('node-fetch');
+const PROXY_URL = 'https://project-readme-gen.vercel.app/api/generate';
 
-if (!process.env.GEMINI_API_KEY) {
-  throw new Error("GEMINI_API_KEY environment variable is required");
-}
+const callProxyApi = async (prompt) => {
+  try {
+    const response = await fetch(PROXY_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ prompt }),
+    });
 
-const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
-const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro" });
+    if (!response.ok) {
+      throw new Error(`API request failed: ${response.statusText}`);
+    }
+
+    const data = await response.json();
+    return data.content;
+  } catch (error) {
+    console.error('Error calling proxy API:', error);
+    throw error;
+  }
+};
 
 const analyzeProject = (projectPath) => {
   const files = glob.sync(`${projectPath}/**/*`, {
@@ -44,8 +60,8 @@ Generate a detailed, SEO-friendly section for a GitHub README that includes:
 Format the output in markdown and ensure it's scannable and well-structured.`;
 
       try {
-        const result = await model.generateContent(seoFriendlyPrompt);
-        return result.response.text();
+        const content = await callProxyApi(seoFriendlyPrompt);
+        return content;
       } catch (error) {
         console.error(`Error generating content for ${file}:`, error);
         return "";
