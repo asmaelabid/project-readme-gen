@@ -1,14 +1,9 @@
 {
     "version": 2,
-    "builds": [
-      {
-        "src": "api/generate.js",
-        "use": "@vercel/node"
-      }
-    ],
     "routes": [
       {
-        "src": "/api/generate.js",
+        "src": "/api/generate",
+        "methods": ["POST"],
         "dest": "/api/generate.js"
       }
     ]
