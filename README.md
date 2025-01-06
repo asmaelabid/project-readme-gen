@@ -1,5 +1,6 @@
 ## Project: README Generator (project-readme-gen)
 
+Try to implement the same solution using free open source LLM, and implement it as a python package
 **Generate high-quality README files effortlessly using the power of AI.**  `project-readme-gen` is a command-line tool that leverages Google's Generative AI and OpenAI's API to automatically create informative and well-structured README files for your projects.  Save time and ensure your projects are well-documented with minimal effort.
 
 ## Key Features
