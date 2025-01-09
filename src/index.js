@@ -38,7 +38,7 @@ Generate a detailed, SEO-friendly section for a GitHub README that includes:
 Format the output in markdown and ensure it's scannable and well-structured.`;
 
       try {
-        const response = await axios.post(PROXY_ENDPOINT, { prompt: "test" });
+        const response = await axios.post(PROXY_ENDPOINT, { prompt: seoFriendlyPrompt });
         console.log(response, " this is response");
         return response.data.content; // Adjust based on your proxy server's response format
       } catch (error) {
