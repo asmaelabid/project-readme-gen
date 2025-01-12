@@ -1,7 +1,26 @@
 {
   "name": "project-readme-gen",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "src/index.js",
+  "description": "AI-powered README.md generator for your projects. Automatically creates professional project documentation with CLI support. Generate structured, SEO-friendly markdown documentation for your GitHub repositories.",
+  "keywords": [
+    "readme",
+    "readme-generator",
+    "documentation",
+    "markdown",
+    "cli",
+    "project-documentation",
+    "auto-generate",
+    "readme-md",
+    "project-template",
+    "documentation-tool",
+    "nodejs",
+    "npm",
+    "markdown-generator",
+    "ai-powered",
+    "developer-tools"
+  ],
+
   "scripts": {
     "start": "node api/generate.js"
   },
